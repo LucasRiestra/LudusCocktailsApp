@@ -15,12 +15,13 @@ img{
     gap: 20px;
     max-width: 60%;
     margin: 0 auto; 
+    margin-bottom: 4vh;
   }
 
   .card {
     border: none !important;
     border-radius: var(--Border-radius) !important;
-    padding: 2vh;
+    padding: 3vh;
     background-color: rgba(0,0,0,.4) !important;
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
     color: var(--Titles-color) !important;

@@ -7,15 +7,14 @@ import { useRef } from 'react';
 
 function App() {
   const gridRef = useRef(null);
-  const { searchTerm, onSearchChange, onSearchSubmit, filteredCocktails } = useCocktails(gridRef);
+  const { searchTerm, onSearchChange, onSearchSubmit, filteredCocktails, searchError } = useCocktails(gridRef); // Añade searchError aquí
 
   return (
     <div className="App">
       <Header />
-      <SearchForm searchTerm={searchTerm} onSearchChange={onSearchChange} onSearchSubmit={onSearchSubmit} />
+      <SearchForm searchTerm={searchTerm} onSearchChange={onSearchChange} onSearchSubmit={onSearchSubmit} searchError={searchError} />
       <CocktailList gridRef={gridRef} cocktails={filteredCocktails} />
     </div>
   );
 }
-
 export default App;

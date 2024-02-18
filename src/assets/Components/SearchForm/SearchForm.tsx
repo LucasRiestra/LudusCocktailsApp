@@ -3,7 +3,7 @@ import { FaSearch } from 'react-icons/fa';
 import { SearchFormProps } from '../../Types/SearchFormProps';
 import "./SearchForm.css";
 
-export const SearchForm: React.FC<SearchFormProps> = ({ searchTerm, onSearchChange, onSearchSubmit }) => (
+export const SearchForm: React.FC<SearchFormProps> = ({ searchTerm, onSearchChange, onSearchSubmit, searchError }) => (
   <div>
     <h1 className='app-title'>Party<br />Cocktails</h1>
     <form onSubmit={onSearchSubmit} className='search-form'>
@@ -20,6 +20,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchTerm, onSearchChan
           onFocus={(e) => e.target.placeholder = ""} 
           onBlur={(e) => e.target.placeholder = "search..."} 
         />
+        {searchError && <p className="error-message">{searchError}</p>}
       </div>
     </form>
     <div className='indications'>
