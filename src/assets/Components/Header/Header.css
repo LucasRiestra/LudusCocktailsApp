@@ -6,8 +6,10 @@
 }
 
 .header{
-    background: linear-gradient(to bottom, var(--Description-color), rgba(0, 0, 0, 0));
+    background: linear-gradient(to bottom, var(--Description-color), rgba(0, 0, 0, 0.9));
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 1;
+    padding-bottom: 1vh;
 }

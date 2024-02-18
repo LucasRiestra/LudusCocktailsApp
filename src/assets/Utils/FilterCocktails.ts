@@ -15,9 +15,6 @@ export const filterCocktails = (allCocktails: any[], searchTerm: string) => {
       if (searchTerm.toLowerCase() === 'no alcohol' || searchTerm.toLowerCase() === 'without alcohol') {
         return cocktail.strAlcoholic === 'Non alcoholic';
       }
-  
-      
-  
       // Search by ingredient (in all ingredients, partial match)
       for (let i = 1; i <= 15; i++) {
         const ingredient = cocktail[`strIngredient${i}`];
@@ -37,8 +34,6 @@ export const filterCocktails = (allCocktails: any[], searchTerm: string) => {
     if (searchTerm.toLowerCase() === 'no alcohol' || searchTerm.toLowerCase() === 'without alcohol') {
       matchingCocktails = matchingCocktails.sort(() => 0.5 - Math.random()).slice(0, 6);
     } else {
-      // Otherwise, take only the first 6 cocktails
-      matchingCocktails = matchingCocktails.slice(0, 6);
   
       // Sort cocktails to put non-alcoholic ones first
       matchingCocktails.sort((a, b) => {

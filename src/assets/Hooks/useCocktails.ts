@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react'
 import axios from 'axios'
 import { filterCocktails } from '../Utils/FilterCocktails';
 
-export const useCocktails = () => {
+export const useCocktails = (gridRef:any) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [allCocktails, setAllCocktails] = useState<any[]>([])
   const [filteredCocktails, setFilteredCocktails] = useState<any[]>([])
@@ -35,10 +35,16 @@ export const useCocktails = () => {
     event.preventDefault();
     const matchingCocktails = filterCocktails(allCocktails, searchTerm);
     setFilteredCocktails(matchingCocktails);
-    console.log(matchingCocktails)
-  };
+    console.log(matchingCocktails);
 
-  
+    if (gridRef.current) {
+      window.scrollTo({
+        top: gridRef.current.offsetTop -window.innerHeight * 0.1,
+        behavior: 'smooth'
+      });
+    }
+
+  }
 
   return { searchTerm, onSearchChange, onSearchSubmit, allCocktails, filteredCocktails }
 }

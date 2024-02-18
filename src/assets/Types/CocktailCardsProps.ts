@@ -10,4 +10,5 @@ export interface CocktailCardProps {
 
   export interface CocktailListProps {
     cocktails: any[];
+    gridRef: React.RefObject<HTMLDivElement>;
   }
