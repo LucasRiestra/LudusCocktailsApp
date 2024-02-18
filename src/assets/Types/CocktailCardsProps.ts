@@ -7,3 +7,7 @@ export interface CocktailCardProps {
     instructions: string;
     strAlcoholic: string;
   }
+
+  export interface CocktailListProps {
+    cocktails: any[];
+  }

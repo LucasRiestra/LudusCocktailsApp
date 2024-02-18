@@ -1,15 +1,48 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
+/* RESET */
+a,
+button,
+input,
+select,
+h1,
+h2,
+h3,
+h4,
+h5 {
+margin: 0;
+padding: 0;
+border: none;
+text-decoration: none;
+appearance: none;
+background: none;
+font-family: inherit;
+scroll-behavior: smooth;
 }
 
 
+:root{
+  --MainTitle-color: #4FA275;
+  --SearchBar-color: #CFFFAA;
+  --Titles-color: #E6C3FF;
+  --Description-color: #6A0DAD;
+  --Border-radius: 2vh;
+}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }}
+.krona-one-regular {
+  font-family: "Krona One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body{
+  background-image: linear-gradient(to bottom, rgba(4, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://res.cloudinary.com/dtqgzojs3/image/upload/v1708193864/LudusGlobal/Desktop_-_2LodusBackground_jirwjj.png');
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Krona One", sans-serif;
+}
+
+.App{
+  text-align: center;
+  color: var(--Titles-color);
+  font-family: "Krona One", sans-serif;
+}

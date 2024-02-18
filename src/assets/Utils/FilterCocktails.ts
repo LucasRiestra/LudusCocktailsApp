@@ -10,16 +10,13 @@ export const filterCocktails = (allCocktails: any[], searchTerm: string) => {
       if (ingredientCount > 6) {
         return false;
       }
-  
+      
       // Special case: search for non-alcoholic cocktails
       if (searchTerm.toLowerCase() === 'no alcohol' || searchTerm.toLowerCase() === 'without alcohol') {
         return cocktail.strAlcoholic === 'Non alcoholic';
       }
   
-      // Search by first letter
-      if (cocktail.strDrink.toLowerCase().startsWith(searchTerm.toLowerCase())) {
-        return true;
-      }
+      
   
       // Search by ingredient (in all ingredients, partial match)
       for (let i = 1; i <= 15; i++) {

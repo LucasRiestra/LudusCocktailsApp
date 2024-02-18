@@ -1,0 +1,51 @@
+
+.input{
+    background-color: var(--SearchBar-color);
+    margin-top: 10vh;
+    margin-bottom: 3vh;
+    border-radius: var(--Border-radius);
+    height: 6vh;
+    width: 40%;
+    transition: 0.7s;
+}
+
+.input:focus {
+    outline: none;
+    box-shadow: 0 5px 10px var(--Description-color);
+  }
+
+  .input:hover {
+    outline: none;
+    box-shadow: 0 5px 10px var(--Description-color);
+  }
+
+.app-title{
+    color: var(--MainTitle-color);
+    font-size: 10vh;
+    margin-top: 5vh;
+    margin-bottom: 4vh;
+    transition: 0.7;
+}
+
+
+
+.indications{
+    color: var(--Titles-color);
+    font-size: 3vh;
+    margin-bottom: 20vh;
+    margin-top: 10vh;
+    transition: 0.6s;
+}
+
+.indications:hover{
+    font-size: 3.1vh;
+    color: rgb(255, 255, 255);
+}
+
+.search-icon{
+    position: absolute;
+    left: 65vh;
+    top: 105px;
+    color: var(--Description-color);
+    font-size: 3vh;
+}

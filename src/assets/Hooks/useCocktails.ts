@@ -8,13 +8,14 @@ export const useCocktails = () => {
   const [filteredCocktails, setFilteredCocktails] = useState<any[]>([])
 
   const alphabet = useMemo(() => 'abcdefghijklmnopqrstuvwxyz'.split(''), [])
+  const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f="
 
   useEffect(() => {
     const fetchCocktails = async () => {
       let cocktails: any[] = []
 
       for (let letter of alphabet) {
-        const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`)
+        const response = await axios.get(`${url}${letter}`)
         if (response.data.drinks) {
           cocktails = [...cocktails, ...response.data.drinks]
         }
@@ -34,8 +35,10 @@ export const useCocktails = () => {
     event.preventDefault();
     const matchingCocktails = filterCocktails(allCocktails, searchTerm);
     setFilteredCocktails(matchingCocktails);
-    console.log(matchingCocktails);
+    console.log(matchingCocktails)
   };
+
+  
 
   return { searchTerm, onSearchChange, onSearchSubmit, allCocktails, filteredCocktails }
 }
