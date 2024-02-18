@@ -5,4 +5,5 @@ export interface SearchFormProps {
   onSearchChange: (event: ChangeEvent<HTMLInputElement>) => void;
   onSearchSubmit: (event: FormEvent) => void;
   searchError?: string | null;
+  noResults?: boolean;
 }

@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CocktailCardProps, CocktailListProps, } from '../../Types/CocktailCardsProps';
 import './CocktailCards.css';
+import Pagination from '../Pagination/Pagination';
 
 export const CocktailList: React.FC<CocktailListProps> = ({ cocktails, gridRef }) => {
+  const [page, setPage] = useState(1);
+  const cocktailsPerPage = 6;
+  const totalPages = Math.ceil(cocktails.length / cocktailsPerPage);
 
   return (
-    < div className='cocktail-grid' ref={gridRef}>
-      {cocktails.slice(0,6).map(cocktail => {
+    <div>
+    <div className='cocktail-grid' ref={gridRef}>
+      {cocktails.slice((page - 1) * cocktailsPerPage, page * cocktailsPerPage).map(cocktail => {
         const cocktailCardProps: CocktailCardProps = {
           name: cocktail.strDrink,
           image: cocktail.strDrinkThumb,
@@ -19,6 +24,8 @@ export const CocktailList: React.FC<CocktailListProps> = ({ cocktails, gridRef }
 
         return <CocktailCard key={cocktail.idDrink} {...cocktailCardProps} />
       })}
+      </div>
+      {cocktails.length > 0 && <Pagination totalPages={totalPages} currentPage={page} onPageChange={setPage} gridRef={gridRef} />}
     </div>
   );
 }

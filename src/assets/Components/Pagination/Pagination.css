@@ -1,0 +1,7 @@
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    gap: 2vh;
+    list-style: none;
+    margin-bottom: 4vh;
+  }

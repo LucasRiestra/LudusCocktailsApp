@@ -48,4 +48,5 @@
     top: 105px;
     color: var(--Description-color);
     font-size: 3vh;
+    cursor: pointer;
 }
