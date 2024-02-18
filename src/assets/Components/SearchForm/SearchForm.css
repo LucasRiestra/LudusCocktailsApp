@@ -22,7 +22,7 @@
 .app-title{
     color: var(--MainTitle-color);
     font-size: 10vh;
-    margin-top: 5vh;
+    margin-top: 15vh;
     margin-bottom: 4vh;
     transition: 0.7;
 }
