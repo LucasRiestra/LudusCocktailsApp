@@ -1,7 +1,7 @@
-import { useState, useEffect, useMemo } from 'react'
-import axios from 'axios'
+import { useState, useEffect } from 'react'
 import { filterCocktails } from '../Utils/FilterCocktails';
 import { validateForm } from '../Utils/ValidateForms';
+import { fetchCocktails } from '../API/cocktailsAPI';
 
 
 export const useCocktails = (gridRef:any) => {
@@ -12,26 +12,15 @@ export const useCocktails = (gridRef:any) => {
   const [noResults, setNoResults] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('');
   const [categoryFilter, setCategoryFilter] = useState(false);
-  
-  const alphabet = useMemo(() => 'abcdefghijklmnopqrstuvwxyz'.split(''), [])
-  const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f="
 
   useEffect(() => {
-    const fetchCocktails = async () => {
-      let cocktails: any[] = []
-
-      for (let letter of alphabet) {
-        const response = await axios.get(`${url}${letter}`)
-        if (response.data.drinks) {
-          cocktails = [...cocktails, ...response.data.drinks]
-        }
-      }
-
-      setAllCocktails(cocktails)
+    const getCocktails = async () => {
+      const cocktails = await fetchCocktails();
+      setAllCocktails(cocktails);
     }
 
-    fetchCocktails()
-  }, [alphabet])
+    getCocktails();
+  }, []);
 
   useEffect(() => {
     if (gridRef.current && filteredCocktails.length > 0) {
@@ -48,10 +37,10 @@ export const useCocktails = (gridRef:any) => {
     if (newSearchTerm !== '') {
       setNoResults(false); 
     }
-    if (!validateForm(newSearchTerm)) { // Si el término de búsqueda no es válido
-      setSearchError('Please enter only alphanumeric characters.'); // Establece el mensaje de error
+    if (!validateForm(newSearchTerm)) {
+      setSearchError('Please enter only alphanumeric characters.');
     } else {
-      setSearchError(null); // Si es válido, asegúrate de que no haya mensaje de error
+      setSearchError(null); 
     }
   };
 
@@ -61,11 +50,11 @@ const [matchingCocktails, setMatchingCocktails] = useState<any[]>([]);
 const onSearchSubmit = (event: React.FormEvent) => {
   event.preventDefault();
   if (searchTerm.trim() === '') {
-    setSearchError('Please enter a search term.'); // Set error message if search term is empty
+    setSearchError('Please enter a search term.'); 
   } else if (searchError === null) {
     const matching = filterCocktails(allCocktails, searchTerm);
-    setMatchingCocktails(matching); // Guarda los cócteles que coinciden
-    setSelectedCategory('Select Category'); // Reinicia el filtro de categoría
+    setMatchingCocktails(matching); 
+    setSelectedCategory('Select Category');
     setFilteredCocktails(matching);
     setNoResults(matching.length === 0);
     setCategoryFilter(true);
