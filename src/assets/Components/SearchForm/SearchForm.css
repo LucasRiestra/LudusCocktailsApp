@@ -1,23 +1,36 @@
-
-.input{
+.input-container{
+    display: flex;
     background-color: var(--SearchBar-color);
-    margin-top: 10vh;
-    margin-bottom: 3vh;
+    margin: 14vh auto 3vh auto; 
     border-radius: var(--Border-radius);
     height: 6vh;
     width: 40%;
     transition: 0.7s;
+    text-align: center;
+    justify-content: center;
+    align-items: center; 
 }
 
-.input:focus {
-    outline: none;
-    box-shadow: 0 5px 10px var(--Description-color);
-  }
+.input{
+    border-radius: var(--Border-radius);
+    height: 100%; 
+    width: 100%; 
+    transition: 0.7s;
+    text-align: center;
+    outline: none; 
+}
 
-  .input:hover {
-    outline: none;
+.input:hover, .input:focus {
     box-shadow: 0 5px 10px var(--Description-color);
-  }
+}
+
+.search-icon{
+    position: absolute;
+    left: 2vh; 
+    color: var(--Description-color);
+    font-size: 3vh;
+    cursor: pointer;
+}
 
 .app-title{
     color: var(--MainTitle-color);
@@ -42,11 +55,57 @@
     color: rgb(255, 255, 255);
 }
 
-.search-icon{
-    position: absolute;
-    left: 65vh;
-    top: 105px;
-    color: var(--Description-color);
-    font-size: 3vh;
-    cursor: pointer;
+@media screen and (max-width: 500px) and (max-height: 950px){
+    .app-title{
+        font-size: 7vh;
+        margin-top: 9vh;
+        transition: 0.7;
+    }
+    .input-container{
+        margin: 10vh auto 3vh auto; 
+        border-radius: var(--Border-radius);
+        height: 6vh;
+        width: 70%;
+        transition: 0.7s;
+        text-align: center;
+        justify-content: center;
+        align-items: center; 
+    }
+
+    .indications{
+        align-items: center;
+        font-size: 3vh;
+        margin-bottom: 10vh;
+        margin-top: 10vh;
+        transition: 0.6s;
+        text-align: center;
+        margin-left: 5vh;
+        margin-right: 5vh;
+    }
+    
+    .indications:hover{
+        font-size: 3.1vh;
+        color: rgb(255, 255, 255);
+    }
+
+    .error-message{
+        color: var(--Titles-color);
+        font-size: 2vh;
+        margin-top: 2vh;
+        transition: 0.6s;
+        text-align: center;
+        margin-left: 2vh;
+        margin-right: 2vh;
+    }
+
+    .no-results-message{
+        color: var(--Titles-color);
+        font-size: 2vh;
+        transition: 0.6s;
+        text-align: center;
+        margin-left: 2vh;
+        margin-right: 2vh;
+    }
+
+
 }

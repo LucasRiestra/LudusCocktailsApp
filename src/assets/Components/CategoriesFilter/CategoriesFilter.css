@@ -8,10 +8,17 @@
 }
 
 .form-select{
-    width: 30vh !important;
+    width: 15% !important;
     margin-bottom: 3vh;
     background-color: rgba(0, 0, 0, 0.5) !important;
     outline: none !important;
     border: none !important;
     color: var(--Description-color) !important;
+}
+
+@media screen and (max-width: 500px) and (max-height: 950px){
+    .form-select{
+        width: 50% !important;
+    }
+    
 }

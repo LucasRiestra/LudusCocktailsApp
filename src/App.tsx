@@ -5,6 +5,7 @@ import  Header from './assets/Components/Header/Header';
 import './index.css';
 import { useRef } from 'react';
 import CategoriesFilter, { cocktailCategories } from './assets/Components/CategoriesFilter/CategoriesFilter';
+import Footer from './assets/Components/Footer/Footer';
 
 function App() {
   const gridRef = useRef(null);
@@ -17,6 +18,7 @@ function App() {
       <SearchForm searchTerm={searchTerm} onSearchChange={onSearchChange} onSearchSubmit={onSearchSubmit} searchError={searchError} noResults={noResults}/>
       {categoryFilter && <CategoriesFilter cocktailCategories={cocktailCategories} onCategoryChange={onCategoryChange}/>}
       <CocktailList gridRef={gridRef} cocktails={filteredCocktails}  />
+      <Footer/>
     </div>
   );
 }

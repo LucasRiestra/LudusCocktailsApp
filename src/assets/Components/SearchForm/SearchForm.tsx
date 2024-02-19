@@ -13,7 +13,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchTerm, onSearchChan
     <div>
       <h1 className='app-title'>Party<br />Cocktails</h1>
       <form onSubmit={onSearchSubmit} className='search-form'>
-        <div style={{ position: 'relative' }}>
+        <div className="input-container" style={{ position: 'relative' }}>
           <FaSearch className="search-icon" onClick={handleIconClick} /> 
           <input 
             type="text" 
@@ -22,11 +22,12 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchTerm, onSearchChan
             value={searchTerm} 
             onChange={onSearchChange} 
             placeholder="Search..." 
-            style={{ textAlign: 'center' }} 
             onFocus={(e) => e.target.placeholder = ""} 
             onBlur={(e) => e.target.placeholder = "search..."} 
           />
-          {searchError && <p className="error-message">{searchError}</p>}
+        </div>
+        <div>
+        {searchError && <p className="error-message">{searchError}</p>}
           {noResults && <p className="no-results-message">I'm sorry but we haven't found a cocktail with those terms, try again with another one!</p>}
         </div>
       </form>

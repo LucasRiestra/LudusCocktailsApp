@@ -8,7 +8,7 @@ const CategoriesFilter: React.FC<CategoriesFilterProps> = ({ onCategoryChange })
     return (
     <div className='filter-container'>
       <select className="form-select" aria-label="Default select example" onChange={(e) => onCategoryChange(e.target.value)}>
-        <option value="">Select Categorie</option>
+        <option value="">Select Category</option>
         {cocktailCategories.map(category => <option key={category} value={category}>{category}</option>)}
       </select>
       </div>
