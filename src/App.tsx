@@ -9,14 +9,14 @@ import Footer from './assets/Components/Footer/Footer';
 
 function App() {
   const gridRef = useRef(null);
-  const { searchTerm, onSearchChange, onSearchSubmit, filteredCocktails, searchError, noResults, onCategoryChange, categoryFilter
+  const { searchTerm, onSearchChange, onSearchSubmit, filteredCocktails, searchError, noResults, onCategoryChange, categoryFilter, selectedCategory
    } = useCocktails(gridRef);
 
   return (
     <div className="App">
       <Header />
       <SearchForm searchTerm={searchTerm} onSearchChange={onSearchChange} onSearchSubmit={onSearchSubmit} searchError={searchError} noResults={noResults}/>
-      {categoryFilter && <CategoriesFilter cocktailCategories={cocktailCategories} onCategoryChange={onCategoryChange}/>}
+      {categoryFilter && <CategoriesFilter cocktailCategories={cocktailCategories} onCategoryChange={onCategoryChange} selectedCategory={selectedCategory}/>}
       <CocktailList gridRef={gridRef} cocktails={filteredCocktails}  />
       <Footer/>
     </div>

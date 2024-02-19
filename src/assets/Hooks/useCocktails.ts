@@ -63,12 +63,9 @@ const onSearchSubmit = (event: React.FormEvent) => {
   if (searchError === null) {
     const matching = filterCocktails(allCocktails, searchTerm);
     setMatchingCocktails(matching); // Guarda los cócteles que coinciden
-    let filtered = matching;
-    if (selectedCategory !== '') {
-      filtered = matching.filter(cocktail => cocktail.strCategory === selectedCategory);
-    }
-    setFilteredCocktails(filtered);
-    setNoResults(filtered.length === 0);
+    setSelectedCategory('Select Category'); // Reinicia el filtro de categoría
+    setFilteredCocktails(matching);
+    setNoResults(matching.length === 0);
     setCategoryFilter(true);
   }
 }
@@ -79,12 +76,12 @@ const onCategoryChange = (newCategory: string) => {
   if (newCategory === 'Select Category') {
     filtered = matchingCocktails;
   } else {
-    filtered = matchingCocktails.filter(cocktail => cocktail.strCategory === newCategory);
+    filtered = allCocktails.filter(cocktail => cocktail.strCategory === newCategory);
   }
   setFilteredCocktails(filtered);
 }
 
-  return { searchTerm, onSearchChange, onSearchSubmit, allCocktails, filteredCocktails, searchError, noResults, onCategoryChange, categoryFilter }
+  return { searchTerm, onSearchChange, onSearchSubmit, allCocktails, filteredCocktails, searchError, noResults, onCategoryChange, categoryFilter, selectedCategory }
 }
 
 export default useCocktails

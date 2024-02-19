@@ -13,22 +13,21 @@
     font-size: 4vh;
     display: flex;
     gap: 5vh;
-    color: var(--Description-color);
   }
 
   .social-icons a{
-    color: var(--Description-color);
+    color: var(--Titles-color);
     transition: color 0.5s ease;
   }
 
   .web-link{
     text-decoration: none;
-    color: var(--Description-color);
+    color: var(--Titles-color);
     transition: color 0.5s ease;
   }
 
   .powered{
-    color: var(--Description-color);
+    color: var(--Titles-color);
     font-size: 2vh;
     transition: color 0.5s ease;
   }
