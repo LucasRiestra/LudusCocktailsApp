@@ -60,7 +60,9 @@ const [matchingCocktails, setMatchingCocktails] = useState<any[]>([]);
 
 const onSearchSubmit = (event: React.FormEvent) => {
   event.preventDefault();
-  if (searchError === null) {
+  if (searchTerm.trim() === '') {
+    setSearchError('Please enter a search term.'); // Set error message if search term is empty
+  } else if (searchError === null) {
     const matching = filterCocktails(allCocktails, searchTerm);
     setMatchingCocktails(matching); // Guarda los cócteles que coinciden
     setSelectedCategory('Select Category'); // Reinicia el filtro de categoría
