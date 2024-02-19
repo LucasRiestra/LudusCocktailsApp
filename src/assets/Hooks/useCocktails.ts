@@ -75,7 +75,12 @@ const onSearchSubmit = (event: React.FormEvent) => {
 
 const onCategoryChange = (newCategory: string) => {
   setSelectedCategory(newCategory);
-  const filtered = matchingCocktails.filter(cocktail => cocktail.strCategory === newCategory);
+  let filtered;
+  if (newCategory === 'Select Category') {
+    filtered = matchingCocktails;
+  } else {
+    filtered = matchingCocktails.filter(cocktail => cocktail.strCategory === newCategory);
+  }
   setFilteredCocktails(filtered);
 }
 
