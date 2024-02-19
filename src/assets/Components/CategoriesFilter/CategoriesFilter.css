@@ -1,0 +1,17 @@
+
+
+.filter-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.form-select{
+    width: 30vh !important;
+    margin-bottom: 3vh;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    outline: none !important;
+    border: none !important;
+    color: var(--Description-color) !important;
+}

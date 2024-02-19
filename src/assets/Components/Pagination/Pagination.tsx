@@ -20,7 +20,7 @@ export const Pagination: React.FC<PaginationProps> = ({ totalPages, currentPage,
     onPageChange(page);
     if (gridRef.current) {
       window.scrollTo({
-        top: gridRef.current.offsetTop - window.innerHeight * 0.1,
+        top: gridRef.current.offsetTop - window.innerHeight * 0.2,
         behavior: 'smooth'
       });
     }
@@ -32,13 +32,13 @@ export const Pagination: React.FC<PaginationProps> = ({ totalPages, currentPage,
         <li className={`page-item ${currentPage === 1 && 'disabled'}`}>
           <button className="page-link" onClick={() => handlePageChange(currentPage - 1)}>prev</button>
         </li>
-        {leftLimit > 1 && <li className="page-item">...</li>}
+        {leftLimit > 1 && <li key="left-ellipsis" className="page-item">...</li>}
         {pages.map(page => (
-          <li className={`page-item ${page === currentPage && 'active'}`}>
+          <li key={page} className={`page-item ${page === currentPage && 'active'}`}>
             <button className="page-link" onClick={() => handlePageChange(page)}>{page}</button>
           </li>
         ))}
-        {rightLimit < totalPages && <li className="page-item">...</li>}
+        {rightLimit < totalPages && <li key="right-ellipsis" className="page-item">...</li>}
         <li className={`page-item ${currentPage === totalPages && 'disabled'}`}>
           <button className="page-link" onClick={() => handlePageChange(currentPage + 1)}>next</button>
         </li>
