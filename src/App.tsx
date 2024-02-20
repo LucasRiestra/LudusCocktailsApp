@@ -18,7 +18,7 @@ function App() {
       <Header />
       <SearchForm searchTerm={searchTerm} onSearchChange={onSearchChange} onSearchSubmit={onSearchSubmit} searchError={searchError} noResults={noResults}/>
       {categoryFilter && <CategoriesFilter cocktailCategories={cocktailCategories} onCategoryChange={onCategoryChange} selectedCategory={selectedCategory}/>}
-      <CocktailList gridRef={gridRef} cocktails={filteredCocktails} currentPage={currentPage} setCurrentPage={setCurrentPage} popularCocktails={popularCocktails} />
+      <CocktailList gridRef={gridRef} cocktails={filteredCocktails} currentPage={currentPage} setCurrentPage={setCurrentPage} popularCocktails={popularCocktails || []} />
       <Footer/>
     </div>
   );
