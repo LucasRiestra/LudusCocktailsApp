@@ -1,11 +1,11 @@
-import { useCocktails } from './assets/Hooks/useCocktails';
-import { SearchForm } from './assets/Components/SearchForm/SearchForm';
-import { CocktailList } from './assets/Components/CocktailCards/CocktailCards';
-import  Header from './assets/Components/Header/Header';
+import { useCocktails } from './Hooks/useCocktails';
+import { SearchForm } from './Components/SearchForm/SearchForm';
+import { CocktailList } from './Components/CocktailCards/CocktailCards';
+import  Header from './Components/Header/Header';
 import './index.css';
 import { useRef } from 'react';
-import CategoriesFilter, { cocktailCategories } from './assets/Components/CategoriesFilter/CategoriesFilter';
-import Footer from './assets/Components/Footer/Footer';
+import CategoriesFilter, { cocktailCategories } from './Components/CategoriesFilter/CategoriesFilter';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   const gridRef = useRef(null);

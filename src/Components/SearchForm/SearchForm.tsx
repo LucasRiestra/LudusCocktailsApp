@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
-import { SearchFormProps } from '../../Types/SearchFormProps';
+import { SearchFormProps } from '../../../Types/SearchFormProps';
 import "./SearchForm.css";
 
 export const SearchForm: React.FC<SearchFormProps> = ({ searchTerm, onSearchChange, onSearchSubmit, searchError, noResults }) => {

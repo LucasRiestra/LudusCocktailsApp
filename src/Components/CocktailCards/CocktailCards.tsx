@@ -1,5 +1,5 @@
 import React from 'react';
-import { CocktailCardProps, CocktailListProps, } from '../../Types/CocktailCardsProps';
+import { CocktailCardProps, CocktailListProps, } from '../../../Types/CocktailCardsProps';
 import './CocktailCards.css';
 import Pagination from '../Pagination/Pagination';
 

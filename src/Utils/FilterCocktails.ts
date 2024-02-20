@@ -17,7 +17,6 @@ export const filterCocktails = (allCocktails: any[], searchTerm: string) => {
         return cocktail.strAlcoholic === 'Non alcoholic';
       }
       
-      // Comprueba si cada palabra de búsqueda está en las palabras del cóctel
     for (let i = 1; i <= 15; i++) {
       const ingredient = cocktail[`strIngredient${i}`];
       if (ingredient && searchWords.every(word => ingredient.toLowerCase().split(' ').some((ingredientWord: string) => ingredientWord.startsWith(word)))) {
