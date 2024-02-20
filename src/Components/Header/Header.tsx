@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="div-header" >
-        <img src="../../../src/assets/logo_ludus.svg" alt="Logo" className="ludus-logo"/>
+        <img src="https://res.cloudinary.com/dtqgzojs3/image/upload/v1708433833/logo_ludus_wal11u.svg" alt="Logo" className="ludus-logo"/>
       </div>
     </header>
   );
