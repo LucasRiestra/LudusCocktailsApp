@@ -71,11 +71,10 @@ export const useCocktails = (gridRef:any) => {
     if (newCategory === 'Select Category') {
       filtered = matchingCocktails;
     } else {
-      filtered = allCocktails.filter(cocktail => cocktail.strCategory === newCategory);
+      filtered = matchingCocktails.filter(cocktail => cocktail.strCategory === newCategory);
     }
     setFilteredCocktails(filtered);
   }
-
   return { searchTerm, onSearchChange, onSearchSubmit, allCocktails, filteredCocktails, searchError, noResults, onCategoryChange, categoryFilter, selectedCategory, currentPage, setCurrentPage }
 }
 
