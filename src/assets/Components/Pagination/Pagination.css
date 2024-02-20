@@ -5,3 +5,9 @@
     list-style: none;
     margin-bottom: 4vh;
   }
+
+  @media screen and (max-width: 500px) and (max-height: 950px){
+    .pagination-container {
+      padding: 0 0;
+    }
+  }
