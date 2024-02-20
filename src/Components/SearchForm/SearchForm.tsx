@@ -42,7 +42,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchTerm, onSearchChan
         <p>HEY!<br /> if you drive, better drink it without alcohol</p>
       </div>
       <div>
-      {showingPopular && <h4>See the most popular Cocktails</h4>}
+      {showingPopular && <h5 className='popular'>See the most popular Cocktails</h5>}
       </div>
     </div>
   );
