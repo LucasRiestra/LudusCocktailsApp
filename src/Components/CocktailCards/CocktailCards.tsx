@@ -35,7 +35,7 @@ export const CocktailList: React.FC<CocktailListProps> = ({ cocktails, popularCo
             strAlcoholic: cocktail.strAlcoholic
           };
 
-          return <CocktailCard key={`${cocktail.idDrink}-${index}`} {...cocktailCardProps} />
+          return <CocktailCard key={`${cocktail.idDrink}-${index}`} {...cocktailCardProps } />
         })}
       </div>
       {displayCocktails.length > 0 && <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={setCurrentPage} gridRef={gridRef} />}

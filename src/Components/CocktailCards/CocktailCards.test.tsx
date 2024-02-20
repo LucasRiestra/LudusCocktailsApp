@@ -53,7 +53,7 @@ test('renders CocktailList with correct props', () => {
 
   const gridRef = React.createRef<HTMLDivElement>();
 
-  render(<CocktailList cocktails={cocktails} currentPage={1} setCurrentPage={() => { } } gridRef={gridRef} />);
+  render(<CocktailList cocktails={cocktails} currentPage={1} setCurrentPage={() => { } } gridRef={gridRef} popularCocktails={[]} />);
 
   (expect(screen.getByText('Test Cocktail 1'))as any).toBeInTheDocument();
   (expect(screen.getByText('Test Cocktail 2'))as any).toBeInTheDocument();
