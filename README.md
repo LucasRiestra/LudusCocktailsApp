@@ -1,3 +1,5 @@
+<p align="center">
+
 # Ludus Cocktails App
 
 ## Description
@@ -84,5 +86,4 @@ Lucas.riestra94@gmail.com
 ### LICENSE
 MIT License
 
-
-
+</p>
