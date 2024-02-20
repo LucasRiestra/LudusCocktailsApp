@@ -66,7 +66,7 @@ This will open the application in your default browser. If it doesn't open autom
 
 ## Live Demo
 
-You can see the application in action here https://main--creative-sunshine-dc1aa3.netlify.app/
+You can see the application in action here https://luduscocktailsparty.netlify.app/
 
 ## Unit Testing
 
