@@ -11,4 +11,7 @@ export interface CocktailCardProps {
   export interface CocktailListProps {
     cocktails: any[];
     gridRef: React.RefObject<HTMLDivElement>;
+    currentPage: number;
+    setCurrentPage: (page: number) => void;
+    
   }

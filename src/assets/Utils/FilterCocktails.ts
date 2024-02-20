@@ -1,4 +1,7 @@
 export const filterCocktails = (allCocktails: any[], searchTerm: string) => {
+
+  const searchWords = searchTerm.toLowerCase().split(' ');
+
     let matchingCocktails = allCocktails.filter((cocktail: any) => {
       let ingredientCount = 0;
       for (let i = 1; i <= 15; i++) {
@@ -13,18 +16,20 @@ export const filterCocktails = (allCocktails: any[], searchTerm: string) => {
       if (searchTerm.toLowerCase() === 'no alcohol' || searchTerm.toLowerCase() === 'without alcohol') {
         return cocktail.strAlcoholic === 'Non alcoholic';
       }
-      for (let i = 1; i <= 15; i++) {
-        const ingredient = cocktail[`strIngredient${i}`];
-        if (ingredient && ingredient.toLowerCase().split(' ').some((word: any) => word.startsWith(searchTerm.toLowerCase()))) {
-          return true;
-        }
-      }
-  
-      if (cocktail.strDrink.toLowerCase().startsWith(searchTerm.toLowerCase())) {
+      
+      // Comprueba si cada palabra de búsqueda está en las palabras del cóctel
+    for (let i = 1; i <= 15; i++) {
+      const ingredient = cocktail[`strIngredient${i}`];
+      if (ingredient && searchWords.every(word => ingredient.toLowerCase().split(' ').some((ingredientWord: string) => ingredientWord.startsWith(word)))) {
         return true;
       }
-      return false;
-    });
+    }
+
+    if (searchWords.every(word => cocktail.strDrink.toLowerCase().split(' ').some((drinkWord: string) => drinkWord.startsWith(word)))) {
+      return true;
+    }
+    return false;
+  });
   
     if (searchTerm.toLowerCase() === 'no alcohol' || searchTerm.toLowerCase() === 'without alcohol') {
       matchingCocktails = matchingCocktails.sort(() => 0.5 - Math.random()).slice(0, 6);
