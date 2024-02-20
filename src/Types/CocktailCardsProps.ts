@@ -13,5 +13,5 @@ export interface CocktailCardProps {
     gridRef: React.RefObject<HTMLDivElement>;
     currentPage: number;
     setCurrentPage: (page: number) => void;
-    
+    popularCocktails: any[];
   }

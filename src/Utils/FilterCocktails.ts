@@ -33,6 +33,17 @@ export const filterCocktails = (allCocktails: any[], searchTerm: string) => {
     }
     return false;
   })
+
+  // Sort the cocktails so that non-alcoholic ones come first
+  matchingCocktails.sort((a, b) => {
+    if (a.strAlcoholic === 'Non alcoholic' && b.strAlcoholic !== 'Non alcoholic') {
+      return -1;
+    }
+    if (a.strAlcoholic !== 'Non alcoholic' && b.strAlcoholic === 'Non alcoholic') {
+      return 1;
+    }
+    return 0;
+  });
   
   return matchingCocktails;
 };
