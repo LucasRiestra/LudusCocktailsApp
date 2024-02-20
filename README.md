@@ -1,4 +1,3 @@
-<p align="center">
 
 # Ludus Cocktails App
 
@@ -65,25 +64,38 @@ npm run dev
 
 This will open the application in your default browser. If it doesn't open automatically, you can visit http://localhost:5173/ in your browser.
 
-### Live Demo
+## Live Demo
 
 You can see the application in action here https://main--creative-sunshine-dc1aa3.netlify.app/
 
-### Unit Testing
+## Unit Testing
 
 We have included unit tests using Jest to ensure code stability and reliability. You can run the tests with the command "npm test".
 
-### Contributions
+## Contributions
 
 If you encounter any issues or have improvement suggestions, feel free to open an issue or submit a pull request.
 
-### Contact
+## Contact
 
 For any questions or comments, please contact us at:
 
-Lucas.riestra94@gmail.com
+Lucas.riestra94@gmail.com <br />
+https://www.linkedin.com/in/lucasriestra/
 
-### LICENSE
+## LICENSE
+
 MIT License
 
-</p>
+Copyright (c)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
