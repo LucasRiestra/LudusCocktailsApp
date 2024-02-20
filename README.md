@@ -61,11 +61,11 @@ Ready for action! Now you can run the application:
 
 npm run dev
 
-This will open the application in your default browser. If it doesn't open automatically, you can visit http://localhost:3000 in your browser.
+This will open the application in your default browser. If it doesn't open automatically, you can visit http://localhost:5173/ in your browser.
 
 ### Live Demo
 
-You can see the application in action here "https://main--creative-sunshine-dc1aa3.netlify.app/"
+You can see the application in action here https://main--creative-sunshine-dc1aa3.netlify.app/
 
 ### Unit Testing
 
