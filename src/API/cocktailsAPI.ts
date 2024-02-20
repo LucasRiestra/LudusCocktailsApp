@@ -8,10 +8,7 @@ export const fetchCocktails = async () => {
 
   const responses = await Promise.all(requests);
 
-  console.log(`Number of API requests: ${responses.length}`);
-
   const cocktails = responses.map(response => response.data.drinks || []).flat();
 
-  console.log(cocktails);
   return cocktails;
 };
