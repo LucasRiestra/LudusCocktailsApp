@@ -26,22 +26,28 @@ export const CocktailList: React.FC<CocktailListProps> = ({ cocktails, popularCo
 
   return (
     <div>
-      <div className='cocktail-grid' ref={gridRef}>
-        {displayCocktails.slice((currentPage - 1) * cocktailsPerPage, currentPage * cocktailsPerPage).map((cocktail: any, index: number) => {
-          const cocktailCardProps: CocktailCardProps = {
-            name: cocktail.strDrink,
-            image: cocktail.strDrinkThumb,
-            category: cocktail.strCategory,
-            ingredients: Array.from({length: 6}, (_, i) => cocktail[`strIngredient${i+1}`]).filter(Boolean),
-            measures: Array.from({length: 6}, (_, i) => cocktail[`strMeasure${i+1}`]).filter(Boolean),
-            instructions: cocktail.strInstructions,
-            strAlcoholic: cocktail.strAlcoholic
-          };
+      {displayCocktails.length > 0 && (
+        <div>
+          <div className='cocktail-grid' ref={gridRef}>
+            {displayCocktails.slice((currentPage - 1) * cocktailsPerPage, currentPage * cocktailsPerPage).map((cocktail: any, index: number) => {
+              if (cocktail.strDrink && cocktail.strDrinkThumb && cocktail.strCategory && cocktail.strInstructions && cocktail.strAlcoholic) {
+                const cocktailCardProps: CocktailCardProps = {
+                  name: cocktail.strDrink,
+                  image: cocktail.strDrinkThumb,
+                  category: cocktail.strCategory,
+                  ingredients: Array.from({length: 6}, (_, i) => cocktail[`strIngredient${i+1}`]).filter(Boolean),
+                  measures: Array.from({length: 6}, (_, i) => cocktail[`strMeasure${i+1}`]).filter(Boolean),
+                  instructions: cocktail.strInstructions,
+                  strAlcoholic: cocktail.strAlcoholic
+                };
 
-          return <CocktailCard key={`${cocktail.idDrink}-${index}`} {...cocktailCardProps } />
-        })}
-      </div>
-      {displayCocktails.length > 0 && <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={setCurrentPage} gridRef={gridRef} />}
+                return <CocktailCard key={`${cocktail.idDrink}-${index}`} {...cocktailCardProps } />
+              }
+            })}
+          </div>
+          <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={setCurrentPage} gridRef={gridRef} />
+        </div>
+      )}
     </div>
   );
 }
