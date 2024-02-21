@@ -38,11 +38,6 @@ img{
     transition: 0.6s;   
   }
 
-  .img:hover{
-    transform: scale(1.1);
-    transition: 0.8s;
-  }
-
   .card-ingredients{
     list-style: none;
     color: var(--Description-color);

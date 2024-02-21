@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
       <a className="web-link" href="https://www.ludusglobal.com/" target="_blank" rel="noopener noreferrer" aria-label="www.ludusglobal.com">
         www.ludusglobal.com
       </a>
-      <p className='powered'>© Powered by Lucas Riestra</p>
+      <p className='powered'>© Developed by Lucas Riestra</p>
     </footer>
   );
 }
