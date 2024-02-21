@@ -6,7 +6,7 @@
 }
 
 .header{
-    background: linear-gradient(to bottom, var(--Description-color), rgba(0, 0, 0, 0.9));
+    background: linear-gradient(to bottom,#6A0DAD, rgba(0, 0, 0, 0.9));
     position: fixed;
     width: 100%;
     top: 0;

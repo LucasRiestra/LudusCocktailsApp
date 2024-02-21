@@ -12,7 +12,7 @@ export const useCocktails = (gridRef:any) => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [categoryFilter, setCategoryFilter] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [hasSearched, setHasSearched] = useState(false); // New state variable
+  const [hasSearched, setHasSearched] = useState(false); 
 
   const popularCocktails = ["Pina Colada", "Daiquiri", "Martini", "Mojito", "Margarita", "Negroni", "Imperial Cocktail", "Old Fashioned", "Espresso Martini", "Manhattan", "Cosmopolitan", "Miami Vice"];
 
