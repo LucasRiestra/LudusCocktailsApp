@@ -149,17 +149,25 @@ npm run dev
 
 This will open the application in your default browser. If it doesn't open automatically, you can visit http://localhost:5173/ in your browser.
 
+## Unit Testing
+
+We have included unit tests using Jest to ensure code stability and reliability. You can run the tests with the command "npx jest".
+
 ## Live Demo
 
 Desktop Demo: Here's a demo of the app on desktop. https://www.loom.com/share/7f0c759824d74fb7b71935030820de27
 
 Responsive Demo: Additionally, check out this https://www.loom.com/share/03ff3095ec5a4629b25634508ea415c5
 
-You can see the application in action here https://luduscocktailsparty.netlify.app/
+## Deployment
 
-## Unit Testing
+The Ludus Cocktails App has been successfully deployed on Netlify, providing a seamless and accessible way for users to experience the application online.
 
-We have included unit tests using Jest to ensure code stability and reliability. You can run the tests with the command "npx jest".
+## Live Deployment
+
+You can explore the live deployment of Ludus Cocktails App here https://luduscocktailsparty.netlify.app/
+
+Feel free to enjoy the application in action and discover a variety of cocktails right at your fingertips! Netlify's robust hosting platform ensures a reliable and responsive user experience.
 
 ## Contributions
 
