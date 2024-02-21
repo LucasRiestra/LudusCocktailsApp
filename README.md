@@ -111,6 +111,26 @@ The next step involves filtering this information during searches, ensuring that
 
 It's important to note that, while in theory, fetching all information from an API might not seem optimal, in practice, it proved to be the most efficient way to obtain the required data.
 
+## Project Organization Folders
+
+### -API 
+Contains modules responsible for handling API requests and interactions. It helps to keep all API-related logic in one place, promoting better code organization and maintenance.
+
+### -Assets
+Holds static assets such as images, icons, or any files needed in the application. This folder is dedicated to resources that do not undergo dynamic changes during runtime.
+
+### -Components
+This directory houses React components that are reusable and serve as building blocks for different parts of the application. Structuring components separately enhances code modularity and reusability.
+
+### -Hooks
+Includes custom React hooks that encapsulate logic and can be shared across components. Hooks are a powerful tool to abstract and reuse stateful logic in functional components.
+
+### -Types
+Stores TypeScript type definitions used throughout the project. This folder is essential for maintaining strong typing and improving code robustness.
+
+### -Utils
+Contains utility functions and helper modules used across different parts of the application. Keeping utility functions centralized in this folder promotes cleaner and more maintainable code.
+
 ## Installation
 
 ### 1. Clone the Repository
@@ -131,11 +151,15 @@ This will open the application in your default browser. If it doesn't open autom
 
 ## Live Demo
 
-You can see the application in action here "https://luduscocktailsparty.netlify.app/"
+Desktop Demo: Here's a demo of the app on desktop. https://www.loom.com/share/7f0c759824d74fb7b71935030820de27
+
+Responsive Demo: Additionally, check out this https://www.loom.com/share/03ff3095ec5a4629b25634508ea415c5
+
+You can see the application in action here https://luduscocktailsparty.netlify.app/
 
 ## Unit Testing
 
-We have included unit tests using Jest to ensure code stability and reliability. You can run the tests with the command "npm test".
+We have included unit tests using Jest to ensure code stability and reliability. You can run the tests with the command "npx jest".
 
 ## Contributions
 
