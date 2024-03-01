@@ -1,6 +1,7 @@
 export const filterCocktails = (allCocktails: any[], searchTerm: string) => {
   const searchWords = searchTerm.toLowerCase().split(' ');
 
+
   const isMatch = (text: string) => 
     searchWords.every(word => 
       text.toLowerCase().split(' ').some((textWord: string) => textWord.startsWith(word))
@@ -10,6 +11,7 @@ export const filterCocktails = (allCocktails: any[], searchTerm: string) => {
     let ingredientCount = 0;
     for (let i = 1; i <= 15; i++) {
       if (cocktail[`strIngredient${i}`]) {
+        
         ingredientCount++;
       }
     }
@@ -33,8 +35,6 @@ export const filterCocktails = (allCocktails: any[], searchTerm: string) => {
     }
     return false;
   })
-
-  // Sort the cocktails so that non-alcoholic ones come first
   matchingCocktails.sort((a, b) => {
     if (a.strAlcoholic === 'Non alcoholic' && b.strAlcoholic !== 'Non alcoholic') {
       return -1;

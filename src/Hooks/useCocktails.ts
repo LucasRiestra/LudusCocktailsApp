@@ -5,7 +5,7 @@ import { fetchCocktails } from '../API/cocktailsAPI';
 
 export const useCocktails = (gridRef:any) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchError, setSearchError] = useState<string | null>(''); 
+  const [searchError, setSearchError] = useState<string | null>('');
   const [allCocktails, setAllCocktails] = useState<any[]>([])
   const [filteredCocktails, setFilteredCocktails] = useState<any[]>([])
   const [noResults, setNoResults] = useState(false);
@@ -13,6 +13,7 @@ export const useCocktails = (gridRef:any) => {
   const [categoryFilter, setCategoryFilter] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [hasSearched, setHasSearched] = useState(false); 
+  const [matchingCocktails, setMatchingCocktails] = useState<any[]>([]);
 
   const popularCocktails = ["Pina Colada", "Daiquiri", "Martini", "Mojito", "Margarita", "Negroni", "Imperial Cocktail", "Old Fashioned", "Espresso Martini", "Manhattan", "Cosmopolitan", "Miami Vice"];
 
@@ -23,7 +24,6 @@ export const useCocktails = (gridRef:any) => {
       const popular = cocktails.filter((cocktail: any) => popularCocktails.includes(cocktail.strDrink));
       setFilteredCocktails(popular);
     }
-
     getCocktails();
   }, []);
 
@@ -41,17 +41,17 @@ export const useCocktails = (gridRef:any) => {
   const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newSearchTerm = event.target.value;
     setSearchTerm(newSearchTerm);
+
     if (newSearchTerm !== '') {
       setNoResults(false); 
     }
     if (!validateForm(newSearchTerm)) {
       setSearchError('Please enter only alphanumeric characters.');
     } else {
+      
       setSearchError(null); 
     }
   };
-
-  const [matchingCocktails, setMatchingCocktails] = useState<any[]>([]);
 
   const resetPage = () => {
     setCurrentPage(1);
@@ -59,6 +59,7 @@ export const useCocktails = (gridRef:any) => {
 
   const onSearchSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    
     if (searchTerm.trim() === '') {
       setSearchError('Please enter a search term.'); 
     } else if (searchError === null) {
@@ -66,9 +67,13 @@ export const useCocktails = (gridRef:any) => {
       setMatchingCocktails(matching); 
       setSelectedCategory('Select Category');
       setFilteredCocktails(matching);
+      
       setNoResults(matching.length === 0);
+      
       setCategoryFilter(true);
+  
       setHasSearched(true);
+      
       resetPage();
     }
   }

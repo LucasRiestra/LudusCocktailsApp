@@ -3,4 +3,3 @@ interface CategoriesFilterProps {
     onCategoryChange: (newCategory: string) => void;
     selectedCategory: string;
   }
-  

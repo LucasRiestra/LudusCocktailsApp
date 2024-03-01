@@ -25,6 +25,6 @@ test('contains the website link', () => {
 
 test('contains the copyright text', () => {
   render(<Footer />);
-  const copyrightText = screen.getByText(/© Powered by Lucas Riestra/i);
+  const copyrightText = screen.getByText(/© Developed by Lucas Riestra/i);
   (expect(copyrightText)as any).toBeInTheDocument();
 });
